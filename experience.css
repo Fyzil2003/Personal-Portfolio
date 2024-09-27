@@ -1,0 +1,196 @@
+
+/* Company Logo Styling */
+.company-logo {
+    margin-bottom: 15px;
+}
+
+.company-logo img {
+    width: 80px; /* Set logo size */
+    height: 80px; /* Set logo size */
+   
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+
+
+.company-logo img:hover {
+    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* Light shadow effect on hover */
+}
+
+.dark .company-logo img:hover {
+    box-shadow: 0 4px 15px rgba(230, 194, 0, 0.3); /* Dark mode hover shadow */
+}
+
+/* Other Experience Section Styles */
+/* Experience Section Background */
+.experience-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+    
+}
+
+.dark .experience-section {
+    background: linear-gradient(90deg, #1f1f1f, #292929); /* Dark mode background */
+    animation: gradientBGAnimation 10s ease infinite;
+}
+
+
+
+/* Other styles remain unchanged... */
+
+
+.experience-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #007BFF, #FF007B);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.dark .experience-section h2 {
+    
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #e6c200, #e05b37);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.experience-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: white; /* Light mode card */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .experience-item {
+    background: #000000; /* Dark mode card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    color: #f0f0f0;
+}
+
+.experience-item:hover {
+    transform: translateY(0px) scale(1.05); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.experience-content h3 {
+    margin: 10px 0;
+    font-size: 1.8em;
+    background: linear-gradient(90deg, #007BFF, #FF007B);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.dark .experience-content h3 {
+    
+    margin: 10px 0;
+    font-size: 1.8em;
+    background: linear-gradient(90deg, #e6c200, #e05b37);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.experience-content p {
+    font-size: 1.2em;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.experience-content .company {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.experience-content .year {
+    color: #888;
+}
+
+.dark .experience-content .year {
+    color: #aaa;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-item {
+        padding: 15px;
+    }
+
+    .experience-icon {
+        font-size: 2em;
+    }
+
+    .experience-content h3 {
+        font-size: 1.5em;
+    }
+
+    .experience-content p {
+        font-size: 1em;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .company-logo img {
+        width: 60px; /* Smaller logo size for mobile */
+        height: 60px;
+    }
+}
+
+
+/* Initial State for Experience Items */
+.experience-item {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially shifted down */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+}
+
+/* Visible State for Experience Items */
+.experience-item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to normal position */
+}
+
+/* Other existing styles remain unchanged */
+

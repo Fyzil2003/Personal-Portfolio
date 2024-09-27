@@ -1,0 +1,219 @@
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Ensure text is centered */
+    height: 100%; /* Optional: Set the height as needed for centering */
+}
+
+
+.dark .projects-section {
+    background-color: #121212;
+}
+
+/* Section Heading */
+.projects-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.dark .projects-section h2 {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Project Item */
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark .project-item {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Hover Effect */
+.project-item:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dark .project-item:hover {
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Project Image */
+.project-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.project-item:hover .project-image {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Project Details */
+.project-details {
+    padding: 20px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0 0 15px 15px;
+    transition: background-color 0.3s ease, transform 0.4s ease;
+    z-index: 2;
+}
+
+.dark .project-details {
+    background-color: rgba(30, 30, 30, 0.8);
+}
+
+.project-item:hover .project-details {
+    background-color: rgba(255, 255, 255, 1); /* Brighter on hover */
+}
+
+.dark .project-item:hover .project-details {
+    background-color: rgba(30, 30, 30, 0.95);
+}
+
+/* Project Title */
+.project-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Gradient for light mode */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dark .project-details h3 {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Gradient for dark mode */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Project Description */
+.project-details p {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #555;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.dark .project-details p {
+    color: wheat;
+}
+
+/* Fade-in effect for description on hover */
+.project-item:hover .project-details p {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Project Link Button */
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue for light mode */
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1em;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Slight grow on hover */
+}
+
+.dark .project-link {
+    background-color: #FFD700; /* Gold for dark mode */
+    color: black;
+}
+
+.dark .project-link:hover {
+    background-color: #d7a500;
+}
+
+/* Fade In Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-section h2 {
+        font-size: 2em;
+    }
+
+    .project-details h3 {
+        font-size: 1.3em;
+    }
+
+    .project-details p {
+        font-size: 1em;
+    }
+}
+
+
+
+/* Project Item Initial State */
+.project-item {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Shift down initially */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* Project Item Visible State (After Scroll) */
+.project-item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Back to original position */
+}
+
+/* Other existing styles remain unchanged */

@@ -1,0 +1,147 @@
+
+/* About Section Styling */
+.about-section {
+    padding: 30px 20px; /* Padding for the section */
+    text-align: center;
+    background: linear-gradient(90deg, #f0f8ff, #e0e0e0); /* Light mode background */
+    background-size: 200% 200%;
+    animation: gradientBGAnimation 10s ease infinite;
+    position: relative; /* For the glow effect */
+}
+
+.dark .about-section {
+    background: black;
+    
+}
+
+
+
+
+/* About Section Heading with Gradient */
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes the text transparent to show the gradient */
+}
+
+.dark .about-section h2 {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+   
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes the text transparent to show the gradient */
+}
+
+/* About Cards Container */
+.about-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: 20px; /* Space between cards */
+}
+
+/* About Card Styling */
+.about-card {
+    background: #fff; /* White background for light mode */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside cards */
+    width: 300px; /* Fixed width for cards */
+    color: #333; /* Text color for light mode */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for card */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+/* Dark Mode for About Card */
+.dark .about-card {
+    background: #333; /* Black background for dark mode */
+    color: #f0f0f0; /* Light text color for dark mode */
+}
+
+/* About Card Hover Effect */
+.about-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Gradient Text for About Section */
+.gradient-text {
+    color: black;
+    
+}
+
+.dark .gradient-text {
+    color: wheat;
+}
+
+/* Icon Container with Shadow Effect */
+.icon-container {
+    font-size: 3em; /* Icon size */
+    margin-bottom: 15px; /* Space below the icon */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect for light mode */
+}
+
+/* Dark Mode Icon Shadow Effect */
+.dark .icon-container {
+    text-shadow: 0 2px 5px rgba(255, 215, 0, 0.5); /* Shadow effect for dark mode */
+}
+
+
+/* Icon Colors */
+/* About Card Icons with Gradient for Light Mode */
+.about-card i {
+    font-size: 2em; /* Adjust size as needed */
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Ensures gradient shows through */
+    transition: all 0.3s ease;
+}
+
+/* About Card Icons with Gradient for Dark Mode */
+.dark .about-card i {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Ensures gradient shows through */
+    transition: all 0.3s ease;
+}
+
+
+/* Responsive Adjustments for About Section */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 40px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .about-card {
+        width: 90%; /* Make cards take full width on smaller screens */
+    }
+
+    .about-section h2 {
+        font-size: 2em; /* Reduce heading size for mobile */
+    }
+}
+
+
+
+
+/* About Card Initial State */
+.about-card {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Shift down initially */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* About Card Visible State (After Scroll) */
+.about-card.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Back to original position */
+}
+
+/* Other existing styles remain unchanged */

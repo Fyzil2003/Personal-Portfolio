@@ -1,0 +1,214 @@
+
+.education-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #f0f8ff, #e0e0e0); /* Light mode background */
+    background-size: 200% 200%;
+    animation: gradientBGAnimation 10s ease infinite;
+    position: relative; /* For the glow effect */
+}
+
+.dark .education-section {
+    background: black;
+    
+}
+
+.education-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #007BFF, #FF007B);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.dark .education-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #e6c200, #e05b37);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease forwards;
+}
+
+.timeline {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: space-around; /* Distribute space evenly */
+    position: relative;
+    max-width: 1000px; /* Adjust maximum width */
+    margin: auto;
+    padding: 40px 0;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    margin: 20px; /* Space between items */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards; /* Animation for timeline items */
+    animation-delay: var(--animation-delay); /* Delay for stagger effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Transition for hover effect */
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift and scale effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.timeline-item:nth-child(1) {
+    --animation-delay: 0.2s; /* Staggered animation */
+}
+
+.timeline-item:nth-child(2) {
+    --animation-delay: 0.4s; /* Staggered animation */
+}
+
+.timeline-item:nth-child(3) {
+    --animation-delay: 0.6s; /* Staggered animation */
+}
+
+.timeline-icon {
+    font-size: 3em; /* Icon size */
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Gradient color for light mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 15px; /* Space between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transition for icon scale on hover */
+}
+
+.dark .timeline-icon {
+    font-size: 3em; /* Icon size */
+    background: linear-gradient(90deg, #e6c200, #e05b37); /* Gradient color for dark mode */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 15px; /* Space between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transition for icon scale on hover */
+}
+
+.timeline-icon:hover {
+    transform: scale(1.1) rotate(10deg); /* Scale and rotate effect on hover */
+}
+
+.content {
+    background: white; /* Light mode card */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transition for hover effect */
+    text-align: center; /* Center text */
+}
+
+.dark .content {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transition for hover effect */
+    text-align: center; /* Center text */
+    
+}
+
+.content:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    background-color: linear-gradient(90deg, #007BFF, #FF007B); /* Slight background color change on hover */
+}
+
+.dark .content:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    background-color: linear-gradient(90deg, #e6c200, #e05b37); /* Slight background color change on hover */
+}
+
+
+.content h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    background: linear-gradient(90deg, #007BFF, #FF007B);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: color 0.3s ease; /* Transition for text color */
+}
+
+.dark .content h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    background: linear-gradient(90deg, #e6c200, #e05b37);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: color 0.3s ease; /* Transition for text color */
+}
+
+.content h3:hover {
+    color: linear-gradient(90deg, #e6c200, #e05b37); /* Change text color on hover */
+}
+
+.content p {
+    
+    margin: 5px 0;
+    font-size: 1em;
+    transition: color 0.3s ease; /* Transition for paragraph color */
+}
+
+.content p:hover {
+    color: #000000; /* Change paragraph color on hover */
+}
+
+.dark .content p:hover {
+    color: #ffffff; /* Change paragraph color on hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .education-section h2 {
+        font-size: 2em;
+    }
+
+    .timeline {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .timeline-item {
+        margin: 10px 0; /* Reduce margin for vertical layout */
+    }
+
+    .content h3 {
+        font-size: 1.2em;
+    }
+
+    .timeline-icon {
+        font-size: 2.5em; /* Reduce icon size on small screens */
+    }
+}
+
+
+
+/* Initial State for Timeline Items */
+.timeline-item {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initially shifted down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* Visible State for Timeline Items */
+.timeline-item.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Back to normal position */
+}
+
+/* Other existing styles remain unchanged */

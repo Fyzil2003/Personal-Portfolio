@@ -1,0 +1,232 @@
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Align logo to left and nav items to right */
+    align-items: center;
+    padding: 15px 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto; /* Center the navbar horizontally */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect for glass-like appearance */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    border-radius: 12px;
+    position: fixed; /* Keep it fixed */
+    top: 0; /* Keep it at the top */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust for the width */
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+}
+
+/* Dark Mode Styles */
+.dark .navbar {
+    background-color: rgba(44, 44, 44, 0.8); /* Dark semi-transparent background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Darker shadow in dark mode */
+}
+
+
+/* Additional styles to ensure proper spacing below the navbar */
+body {
+    padding-top: 80px; /* Add some padding to prevent content from hiding behind the fixed navbar */
+}
+
+
+
+
+/* Logo Styling */
+/* Logo Styling */
+.logo {
+    font-size: 1.8em; /* Adjust font size */
+    font-weight: bold;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Blue to Pink gradient for light mode */
+    -webkit-background-clip: text;
+    background-clip: text; /* Ensure background clipping works */
+    color: transparent;
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Dark Mode Logo Styling */
+.dark .logo {
+    
+    font-size: 1.8em; /* Adjust font size */
+    font-weight: bold;
+    background: linear-gradient(90deg, #e6c200, #e05b37); /* Blue to Pink gradient for light mode */
+    -webkit-background-clip: text;
+    background-clip: text; /* Ensure background clipping works */
+    color: transparent;
+    text-decoration: none;
+    padding: 5px;
+}
+
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+/* Nav Links for Light Mode with Gradient */
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Gradient for light mode */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Ensures gradient shows through */
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for Light Mode */
+.nav-links li a:hover {
+    color: transparent; /* Gradient stays in place */
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Reapply the gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateY(-3px); /* Pop-out effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.dark .nav-links li a {
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Gradient color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Ensure the text is transparent to show the gradient */
+    transition: all 0.3s ease;
+}
+
+/* Dark Mode Icon */
+.mode-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: rgb(183, 81, 214) /* Default color in light mode */
+    margin-left: 20px; /* Adds space between the last nav link and the dark mode toggle */
+}
+
+.dark .mode-toggle {
+    color: rgb(236, 131, 10); /* Change color to white in dark mode */
+    padding-top: 2px;
+}
+
+/* Hamburger and Close Icon */
+.menu-icon {
+    display: none;
+    font-size: 1.5em;  /* Adjust size */
+    cursor: pointer;
+    color: rgb(147, 55, 175)     /* Default color in light mode */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hide off-screen by default */
+        height: 100vh;
+        width: 60%;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: flex-start; /* Align items at the top */
+        align-items: center;
+        gap: 40px;
+        transition: right 0.4s ease-in-out; /* Smooth sliding effect */
+    }
+
+    .dark .nav-links {
+        background-color: #333; /* Dark background for mobile menu */
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide in */
+    }
+
+    /* Close Icon */
+    .close-icon {
+        display: flex;
+        justify-content: flex-end; /* Align to the right */
+        padding: 15px; /* Some padding for the close button */
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .close-icon i {
+        font-size: 1.5em; /* Adjust size */
+        color: rgb(239, 71, 189); /* Default color in light mode */
+    }
+
+    .dark .close-icon i {
+        color: rgb(249, 155, 3); /* Change color to white in dark mode */
+    }
+
+    /* Show the Hamburger Menu */
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon i {
+        font-size: 1.5em;  /* Adjust size */
+        transition: transform 0.3s ease;
+        color: rgb(239, 71, 189);    /* Default color in light mode */
+    }
+
+    .dark .menu-icon i {
+        color: rgb(244, 115, 10); /* Change color to white in dark mode */
+        padding-top: 3px;
+    }
+
+    .nav-links li a {
+        font-size: 1.2em;
+    }
+
+    .mode-toggle {
+        position: absolute;
+        top: 20px;
+        right: 70px;
+        padding-right: 10px;
+        padding-top: 3px;
+        color: rgb(239, 71, 189);
+    }
+}
+
+/* Hide Close Icon on Larger Screens */
+@media (min-width: 769px) {
+    .close-icon {
+        display: none;
+    }
+}
+
+/* Dark Mode Styling */
+body.dark .menu-icon {
+    color: white; /* Ensure visibility of the icon in dark mode */
+}
+
+
+
+.dark .navbar:hover {
+    background: linear-gradient(90deg, #61571e, #683329); /* Dark mode gradient */
+    box-shadow: 0 0 30px rgba(91, 46, 39, 0.8), 0 0 60px rgba(255, 215, 0, 0.5); /* Smooth glowing effect */
+    transition: background 0.6s ease, box-shadow 0.6s ease;
+}
+
+.navbar:hover {
+    background: linear-gradient(90deg, #cfe2f4, #eac4d6); /* Dark mode gradient */
+    box-shadow: 0 0 30px rgba(237, 206, 235, 0.8), 0 0 60px rgba(255, 215, 0, 0.5); /* Smooth glowing effect */
+    transition: background 0.6s ease, box-shadow 0.6s ease;
+}

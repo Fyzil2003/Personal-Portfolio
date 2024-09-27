@@ -1,0 +1,90 @@
+
+/* Footer Section */
+.footer-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #f0f8ff, #e0e0e0); /* Light mode background */
+    background-size: 200% 200%;
+    animation: gradientBGAnimation 10s ease infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.dark .footer-section {
+    background: linear-gradient(90deg, #1f1f1f, #292929); /* Dark mode background */
+    animation: gradientBGAnimation 10s ease infinite;
+}
+
+/* Social Icon Links */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+/* Apply gradient to the icons */
+.social-link {
+    font-size: 2.5em;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient for icons */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.5s cubic-bezier(0.42, 0, 0.58, 1), background 0.5s ease;
+    position: relative;
+}
+
+.dark .social-link {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient for icons */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Smooth hover effect without background or glow */
+.social-link:hover {
+    transform: translateY(-8px) scale(1.2); /* Smooth pop-out effect */
+}
+
+.social-link:active {
+    transform: translateY(-3px) scale(1.1); /* Slight press effect on click */
+}
+
+/* Footer Text */
+.footer-section p {
+    font-size: 1em;
+    color: #333;
+}
+
+.dark .footer-section p {
+    color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 20px;
+    }
+
+    .social-link {
+        font-size: 2em;
+    }
+
+    .footer-section p {
+        font-size: 0.9em;
+    }
+}
+
+/* Gradient Background Animation */
+@keyframes gradientBGAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+

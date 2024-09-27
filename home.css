@@ -1,0 +1,143 @@
+
+/* Home Section Styling */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    background-color: #f9f9f9; /* Light background for light mode */
+    text-align: center;
+}
+
+/* Light Mode Heading Gradient */
+.home-content h1 {
+    font-size: 3em;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Gradient from blue to pink */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes the text transparent to show the gradient */
+    margin-bottom: 20px;
+}
+
+/* Dark Mode Heading Gradient */
+.dark .home-content h1 {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Gradient from gold to tomato */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    color: #555; /* Slightly darker text in light mode */
+    margin-bottom: 40px;
+}
+
+.home-content .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Gradient from blue to pink */
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-content .cta-button:hover {
+    background: linear-gradient(90deg, #0056b3, #d70063); /* Darker gradient on hover */
+    transform: scale(1.05);
+}
+
+/* Dark Mode for Home Section */
+.dark .home-section {
+    background-color: #121212; /* Dark background for dark mode */
+}
+
+.dark .home-content p {
+    color: #cccccc; /* Slightly lighter text in dark mode */
+}
+
+/* Dark Mode for Gradient Button */
+.dark .cta-button {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Gradient from gold to tomato */
+    color: black;
+}
+
+.dark .cta-button:hover {
+    background: linear-gradient(90deg, #e6c200, #e05b37); /* Darker gold/tomato on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .home-content h1 {
+        font-size: 2.5em;
+    }
+
+    .home-content p {
+        font-size: 1em;
+    }
+}
+
+/* Profile Picture Styling */
+/* Profile Picture Styling with Glow Effect */
+.profile-picture {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 50%; /* Makes the image rounded */
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Gradient border */
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.6), 0px 0px 20px rgba(255, 0, 123, 0.6); /* Glowing shadow effect */
+}
+
+.profile-picture img {
+    border-radius: 50%; /* Makes the image inside rounded */
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Maintain square aspect ratio */
+    object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+/* Dark Mode for Profile Picture with Glowing Effect */
+.dark .profile-picture {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Gold to tomato gradient */
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.7), 0px 0px 20px rgba(255, 99, 71, 0.7); /* Glowing shadow effect in dark mode */
+}
+
+/* Animation Styles */
+.home-content {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially shifted down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth animation */
+}
+
+.home-content.visible {
+    opacity: 1; /* Fully visible when scrolled into view */
+    transform: translateY(0); /* Return to original position */
+}
+
+/* Profile Picture Animation */
+.profile-picture {
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.8); /* Scale down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.profile-picture.visible {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Back to original size */
+}
+
+
+
+.dark .home-section:hover {
+    background: linear-gradient(90deg, #61571e, #683329); /* Dark mode gradient */
+    box-shadow: 0 0 30px rgba(91, 46, 39, 0.8), 0 0 60px rgba(255, 215, 0, 0.5); /* Smooth glowing effect */
+    transition: background 0.6s ease, box-shadow 0.6s ease;
+}
+
+.home-section:hover {
+    background: linear-gradient(90deg, #cfe2f4, #eac4d6); /* Dark mode gradient */
+    box-shadow: 0 0 30px rgba(237, 206, 235, 0.8), 0 0 60px rgba(255, 215, 0, 0.5); /* Smooth glowing effect */
+    transition: background 0.6s ease, box-shadow 0.6s ease;
+}

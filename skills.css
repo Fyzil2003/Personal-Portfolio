@@ -1,0 +1,165 @@
+
+/* Skills Section */
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #f0f8ff, #e0e0e0); /* Light mode background */
+    background-size: 200% 200%;
+    animation: gradientBGAnimation 10s ease infinite;
+    position: relative; /* For the glow effect */
+}
+
+.dark .skills-section {
+    background: linear-gradient(90deg, #121212, #1f1f1f); /* Dark mode background */
+    animation: gradientBGAnimation 10s ease infinite;
+}
+
+@keyframes gradientBGAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.skills-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease forwards;
+}
+
+.dark .skills-section h2 {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.8); /* Light mode card */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    width: 120px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Make sure the element is above the pseudo-element */
+}
+
+.dark .skill-item {
+    background: rgba(44, 44, 44, 0.8); /* Dark mode card */
+    color: #f0f0f0;
+}
+
+/* Gradient Icon Colors */
+.skill-item i {
+    font-size: 2em;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background 0.3s ease;
+}
+
+.dark .skill-item i {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient */
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background 0.3s ease;
+}
+
+.skill-item span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #007BFF, #FF007B); /* Light mode gradient */
+    border-radius: 12px;
+    opacity: 0;
+    z-index: -1; /* Position the pseudo-element below the content */
+    transition: opacity 0.3s ease;
+}
+
+.dark .skill-item::before {
+    background: linear-gradient(90deg, #FFD700, #FF6347); /* Dark mode gradient */
+}
+
+.skill-item:hover::before {
+    opacity: 1; /* Show gradient on hover */
+}
+
+.skill-item:hover {
+    transform: scale(1.1) translateY(-5px); /* Pop-up effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dark .skill-item:hover {
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.skill-item:hover i {
+    background: linear-gradient(90deg, #FF007B, #007BFF); /* Change gradient color on hover in light mode */
+    -webkit-background-clip: text;
+}
+
+.dark .skill-item:hover i {
+    background: linear-gradient(90deg, #FF6347, #FFD700); /* Change gradient color on hover in dark mode */
+    -webkit-background-clip: text;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-section h2 {
+        font-size: 2em;
+    }
+
+    .skill-item {
+        width: 100px;
+        padding: 15px;
+    }
+
+    .skill-item span {
+        font-size: 1em;
+    }
+}
+
+
+
+
